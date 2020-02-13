@@ -1,0 +1,232 @@
+{% load static %}
+<html>
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="{% static "/bootstrap-4.4.1-dist/css/bootstrap.min.css" %}">
+<link rel="stylesheet" href="{% static "/fontawesome-free-5.12.0-web/css/all.css" %}">
+<title>Sustainable School Monitor</title>
+</head>
+<body>
+<div class="card-columns my-5 mx-5">
+ <div class="card text-white bg-primary">
+<div class="card-body">
+ <h3 class="card-title">Year R</h3>
+  <p class="card-text">
+Sustainable school readings:
+ <table class="table text-white">
+ <tbody>
+<tr>
+ <th scope="row"><i class="far fa-lightbulb fa-2x"></th>
+ <td>Number of minutes lights were on: {{ year_R_light_readings}}</td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-recycle fa-2x"></th>
+ <td>Number of recycling items collected in a bin: {{ year_R_bin_readings}} </td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-bicycle fa-2x"></i></th>
+ <td>Number of bikes in bike rack: {{ year_R_bike_readings}}</td>
+</tr>
+ </tbody>
+</table>
+ </p>
+</div>
+ </div>
+  <div class="card text-white bg-secondary">
+<div class="card-body">
+ <h3 class="card-title">Year 3</h3>
+<p class="card-text">
+Sustainable school readings:
+ <table class="table text-white">
+ <tbody>
+<tr>
+ <th scope="row"><i class="far fa-lightbulb fa-2x"></th>
+ <td>Number of minutes lights were on: {{ year_3_light_readings}}</td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-recycle fa-2x"></th>
+ <td>Number of recycling items collected in a bin: {{ year_3_bin_readings}} </td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-bicycle fa-2x"></i></th>
+ <td>Number of bikes in bike rack: {{ year_3_bike_readings}}</td>
+</tr>
+ </tbody>
+</table>
+ </p>
+</div>
+ </div>
+ <div class="card text-white bg-dark">
+<div class="card-body">
+ <h3 class="card-title">Year 6</h3>
+ <p class="card-text">
+Sustainable school readings:
+ <table class="table text-white">
+ <tbody>
+<tr>
+ <th scope="row"><i class="far fa-lightbulb fa-2x"></th>
+ <td>Number of minutes lights were on: {{ year_6_light_readings}}</td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-recycle fa-2x"></th>
+ <td>Number of recycling items collected in a bin: {{ year_6_bin_readings}} </td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-bicycle fa-2x"></i></th>
+ <td>Number of bikes in bike rack: {{ year_6_bike_readings}}</td>
+</tr>
+ </tbody>
+</table>
+ </p>
+</div>
+ </div>
+ <div class="card text-white bg-success">
+<div class="card-body">
+ <h3 class="card-title">Year 1</h3>
+ <p class="card-text">
+Sustainable school readings:
+ <table class="table text-white">
+ <tbody>
+<tr>
+ <th scope="row"><i class="far fa-lightbulb fa-2x"></th>
+ <td>Number of minutes lights were on: {{ year_1_light_readings}}</td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-recycle fa-2x"></th>
+ <td>Number of recycling items collected in a bin: {{ year_1_bin_readings}} </td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-bicycle fa-2x"></i></th>
+ <td>Number of bikes in bike rack: {{ year_1_bike_readings}}</td>
+</tr>
+ </tbody>
+</table>
+ </p>
+</div>
+ </div>
+ <div class="card text-white bg-danger">
+<div class="card-body">
+ <h3 class="card-title">Year 4</h3>
+ <p class="card-text">
+Sustainable school readings:
+ <table class="table text-white">
+ <tbody>
+<tr>
+ <th scope="row"><i class="far fa-lightbulb fa-2x"></th>
+ <td>Number of minutes lights were on: {{ year_4_light_readings}}</td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-recycle fa-2x"></th>
+ <td>Number of recycling items collected in a bin: {{ year_4_bin_readings}} </td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-bicycle fa-2x"></i></th>
+ <td>Number of bikes in bike rack: {{ year_4_bike_readings}}</td>
+</tr>
+ </tbody>
+</table>
+ </p>
+</div>
+ </div>
+ <div class="card text-white bg-warning">
+<div class="card-body">
+ <h3 class="card-title">Hall</h3>
+ <p class="card-text">
+Sustainable school readings:
+ <table class="table text-white">
+ <tbody>
+<tr>
+ <th scope="row"><i class="far fa-lightbulb fa-2x"></th>
+ <td>Number of minutes lights were on: {{ hall_light_readings}}</td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-recycle fa-2x"></th>
+ <td>Number of recycling items collected in a bin: {{ hall_bin_readings}} </td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-bicycle fa-2x"></i></th>
+ <td>Number of bikes in bike rack: {{ hall_bike_readings}}</td>
+</tr>
+ </tbody>
+</table>
+ </p>
+</div>
+ </div>
+ <div class="card text-white bg-dark">
+<div class="card-body">
+ <h3 class="card-title">Year 2</h3>
+ <p class="card-text">
+Sustainable school readings:
+ <table class="table text-white">
+ <tbody>
+<tr>
+ <th scope="row"><i class="far fa-lightbulb fa-2x"></th>
+ <td>Number of minutes lights were on: {{ year_2_light_readings}}</td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-recycle fa-2x"></th>
+ <td>Number of recycling items collected in a bin: {{ year_2_bin_readings}} </td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-bicycle fa-2x"></i></th>
+ <td>Number of bikes in bike rack: {{ year_2_bike_readings}}</td>
+</tr>
+ </tbody>
+</table>
+ </p>
+</div>
+ </div>
+ <div class="card text-white bg-info">
+<div class="card-body">
+ <h3 class="card-title">Year 5</h3>
+ <p class="card-text">
+Sustainable school readings:
+ <table class="table text-white">
+ <tbody>
+<tr>
+ <th scope="row"><i class="far fa-lightbulb fa-2x"></th>
+ <td>Number of minutes lights were on: {{ year_5_light_readings}}</td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-recycle fa-2x"></th>
+ <td>Number of recycling items collected in a bin: {{ year_5_bin_readings}} </td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-bicycle fa-2x"></i></th>
+ <td>Number of bikes in bike rack: {{ year_5_bike_readings}}</td>
+</tr>
+ </tbody>
+</table>
+ </p>
+</div>
+ </div>
+<div class="card bg-white">
+<div class="card-body">
+ <h3 class="card-title">Playground</h3>
+  <p class="card-text">
+Sustainable school readings:
+ <table class="table">
+ <tbody>
+<tr>
+ <th scope="row"><i class="far fa-lightbulb fa-2x"></th>
+ <td>Number of minutes lights were on: {{ playground_light_readings}}</td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-recycle fa-2x"></th>
+ <td>Number of recycling items collected in a bin: {{ playground_bin_readings}} </td>
+</tr>
+<tr>
+ <th scope="row"><i class="fas fa-bicycle fa-2x"></i></th>
+ <td>Number of bikes in bike rack: {{ playground_bike_readings}}</td>
+</tr>
+ </tbody>
+</table>
+ </p>
+</div>
+ </div>
+</div>
+</body>
+</html>

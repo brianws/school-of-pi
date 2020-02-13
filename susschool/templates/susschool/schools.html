@@ -1,0 +1,30 @@
+{% load static %}
+<html>
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="{% static "/bootstrap-4.4.1-dist/css/bootstrap.min.css" %}">
+<link rel="stylesheet" href="{% static "/fontawesome-free-5.12.0-web/css/all.css" %}">
+<style>
+	a { color: #fff !important; }
+</style>
+<title>Sustainable Schools</title>
+</head>
+<body>
+	<div>
+		<div class="card-columns my-5 mx-5">
+			{% for school in schools %}
+				<div class="card text-white bg-primary">
+					<div class="card-body">
+					 <h3 class="card-title">{{ school.name }}</h3>
+					  <p class="card-text"><a href="{% url 'score' pk=school.pk %}">Sustainable school image: </a></p>
+					  <p class="card-text"><a href="{% url 'sus_list' pk=school.pk %}">Sustainable score statistics: </a></p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+</html>
