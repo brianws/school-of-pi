@@ -4,16 +4,24 @@ st mary's school of pi
 This website was developed using the guidlines from the excellent https://tutorial.djangogirls.org/en/ tutorial, 
 so it might be prudent to read through this first.
 Once the code is downloaded, to launch the web server, do the following in a teminal window:
+
 cd [folder_where_code_is]
+
 source myvenv/bin/activate
+
 python manage.py runserver
 
 You will need to set up the local sqllite database. This can be done (i think) with the following in a terminal window:
+
 cd [folder_where_code_is]
+
 source myvenv/bin/activate
+
 python manage.py makemigrations susschool
+
 python manage.py migrate susschool
-# todo: I will provide a script to set up some test data
+
+(todo: I will provide a script to set up some test data)
 
 You should be able to go to the default django admin site (http://127.0.0.1:8000/admin/) to add schools, areas of schools, and readings 
 (you might need to set yourself up as an admin first see here: https://tutorial.djangogirls.org/en/django_admin/). 
