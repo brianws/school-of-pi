@@ -5,7 +5,9 @@ from django.utils import timezone
 class School(models.Model):
     name = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
-
+    code = models.CharField(max_length=15, default='Change me')
+    colour = models.CharField(max_length=25, default='bg-primary')
+    
     def __str__(self):
         return self.name
 
@@ -24,5 +26,5 @@ class Reading(models.Model):
     amount = models.IntegerField()
     
     def __str__(self):
-        return self.area.name + " " + self.type + " reading"
+        return self.area.school.name + " " + self.area.name + " " + self.type + " reading"
 

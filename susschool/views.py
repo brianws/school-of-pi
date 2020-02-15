@@ -11,7 +11,8 @@ light_key = 'light'
 bin_key = 'bin'
 bike_key = 'bike'
     
-def sus_list(request, pk):
+def areas(request, pk):
+    # pk is the school id, and is used to return the areas of the school
     # Assuming all Schools have the same Areas.
     # todo: Would be better if the Areas are dynamic.
     # This means that these hard coded values must have 
@@ -86,15 +87,15 @@ def sus_list(request, pk):
         'playground_bin_readings' : playground_bin_readings,
         'playground_bike_readings' : playground_bike_readings
         }
-    return render(request, 'susschool/sus_list.html', context)
+    return render(request, 'susschool/areas.html', context)
 
-def school(request, pk):
+def areas_todo(request, pk):
     # todo: dynamic areas
     areas = Area.objects.filter(school__pk=1)
     
     context = {'areas' : areas}
     
-    return render(request, 'susschool/sus_list.html', context)
+    return render(request, 'susschool/areas_todo.html', context)
 
 def schools(request):
     schools = School.objects.all()
@@ -103,7 +104,7 @@ def schools(request):
     return render(request, 'susschool/schools.html', context)
 
 def score(request, pk):
-    school = School.objects.get(pk = 1)
+    school = School.objects.get(id = pk)
     # areas = Area.objects.filter(school__pk=1)
     readings = Reading.objects.filter(area__school__pk = pk)
     readings_grouped = readings.values('type').annotate(amount=Sum('amount'))

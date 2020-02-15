@@ -16,11 +16,23 @@
 	<div>
 		<div class="card-columns my-5 mx-5">
 			{% for school in schools %}
-				<div class="card text-white bg-primary">
+				<div class="card text-white {{ school.colour }}">
 					<div class="card-body">
-					 <h3 class="card-title">{{ school.name }}</h3>
-					  <p class="card-text"><a href="{% url 'score' pk=school.pk %}">Sustainable school image: </a></p>
-					  <p class="card-text"><a href="{% url 'sus_list' pk=school.pk %}">Sustainable score statistics: </a></p>
+						<h3 class="card-title">{{ school.name }}</h3>
+						 <p class="card-text">
+							<table class="table text-white">
+							<tbody>
+							<tr>
+							 <th scope="row"><i class="fas fa-image fa-2x"></th>
+							 <td><a href="{% url 'score' pk=school.pk %}">Sustainable school image: </a></td>
+							</tr>
+							<tr>
+							 <th scope="row"><i class="fas fa-leaf fa-2x"></th>
+							 <td><a href="{% url 'areas' pk=school.pk %}">Sustainable score statistics: </a></td>
+							</tr>
+							</tbody>
+							</table>
+						  </p>					 
 					</div>
 				</div>
 			{% endfor %}
