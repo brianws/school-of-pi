@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 
 class School(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
     code = models.CharField(max_length=15, default='Change me')
@@ -12,6 +13,7 @@ class School(models.Model):
         return self.name
 
 class Area(models.Model):
+    id = models.IntegerField(primary_key=True)
     school = models.ForeignKey('school', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
