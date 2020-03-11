@@ -1,3 +1,4 @@
+# updated 2020.03.11.22:43
 import spidev
 import time
 import os
@@ -106,7 +107,7 @@ try:
 		time.sleep(0.1) # this delay reduced the CPU utilisation from 100% to approx 50%
 except KeyboardInterrupt:
 	pass
-	
+
 GPIO.cleanup()
 print("released GPIO")
 time.sleep(2)
