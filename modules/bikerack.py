@@ -1,3 +1,4 @@
+# updated 2020.03.11.22:43
 import spidev
 import time
 import os
@@ -68,10 +69,10 @@ try:
 			#print out results
 			print "Bike", i+1, "Reading =", lightValues[i], "Threshold =", thresholdValues[i]
 
-			# if the reset button is pressed, store the new light settings
-			if not GPIO.input(button): #if the button is pressed
-				for i in range(3):
-					thresholdValues[i] = int(lightValues[i]*0.80) # 80% to introduce debounce
+		# if the reset button is pressed, store the new light settings
+		if not GPIO.input(button): #if the button is pressed
+			for i in range(3):
+				thresholdValues[i] = int(lightValues[i]*0.80) # 80% to introduce debounce
 
 	# The threshold value is set at 80% below the calibated value.
 	# When the LDR detects 90% of the normal value, it will change the led
@@ -106,7 +107,7 @@ try:
 		time.sleep(0.1) # this delay reduced the CPU utilisation from 100% to approx 50%
 except KeyboardInterrupt:
 	pass
-	
+
 GPIO.cleanup()
 print("released GPIO")
 time.sleep(2)
