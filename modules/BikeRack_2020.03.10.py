@@ -68,10 +68,10 @@ try:
 			#print out results
 			print "Bike", i+1, "Reading =", lightValues[i], "Threshold =", thresholdValues[i]
 
-			# if the reset button is pressed, store the new light settings
-			if not GPIO.input(button): #if the button is pressed
-				for i in range(3):
-					thresholdValues[i] = int(lightValues[i]*0.80) # 80% to introduce debounce
+		# if the reset button is pressed, store the new light settings
+		if not GPIO.input(button): #if the button is pressed
+			for i in range(3):
+				thresholdValues[i] = int(lightValues[i]*0.80) # 80% to introduce debounce
 
 	# The threshold value is set at 80% below the calibated value.
 	# When the LDR detects 90% of the normal value, it will change the led
