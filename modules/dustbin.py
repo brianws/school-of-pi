@@ -2,6 +2,8 @@ import spidev
 import time
 import os
 import RPi.GPIO as GPIO
+import mysql.connector
+from datetime import date, datetime, timedelta
 
 # open SPI bus (SPI needs to be enabled in raspi-config)
 spi=spidev.SpiDev()
@@ -24,6 +26,20 @@ def ReadChannel(channel):
     adc = spi.xfer2([1,(8+channel)<<4,0])
     data = ((adc[1]&3) << 8)+adc[2]
     return data
+
+def SaveToCloud():
+        # save value to cloud
+        connection = mysql.connector.connect(host='susschool1.csocp6rlrcp1.eu-west-2.rds.amazonaws.com', user='admin', database='susschool', password='h7e48wt^78wE377bhh5*' )
+        cursor = connection.cursor()
+        now = datetime.now().date()
+        year_5_st_marys = 6
+        sql = "INSERT INTO susschool_reading(type, amount, area_id, created_date) VALUES(%s, %s, %s, %s)"
+        data = ('Bike', 1, year_5_st_marys, now)
+        result = cursor.execute(sql, data)
+        connection.commit()
+        cursor.close()
+        connection.close()
+
 
 
 lidSensor = 0
@@ -58,6 +74,7 @@ try:
 
         if lidSensor<lidTrigger and lidOpen == False:
             GPIO.output(greenLed, GPIO.HIGH)
+            SaveToCloud()
             lidOpen = True
         elif lidSensor>lidTrigger*1.02:
             GPIO.output(greenLed, GPIO.LOW)
@@ -68,11 +85,11 @@ try:
         elif fullSensor>fullTrigger*1.05:
             GPIO.output(redLed, GPIO.LOW)
             binFull = False
-        
+
         time.sleep(0.1) # this delay reduced the CPU utilisation from 100% to approx 50%
 except KeyboardInterrupt:
     pass
-    
+
 GPIO.cleanup()
 print("released GPIO")
 time.sleep(2)
