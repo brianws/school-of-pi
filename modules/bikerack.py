@@ -41,9 +41,9 @@ def SaveToCloud():
 	connection = mysql.connector.connect(host='susschool1.csocp6rlrcp1.eu-west-2.rds.amazonaws.com', user='admin', database='susschool', password='h7e48wt^78wE377bhh5*' )
 	cursor = connection.cursor()
 	now = datetime.now().date()
-	year_5_st_marys = 6
+	year_4_st_marys = 5
 	sql = "INSERT INTO susschool_reading(type, amount, area_id, created_date) VALUES(%s, %s, %s, %s)"
-	data = ('Bike', 1, year_5_st_marys, now)
+	data = ('bike', 1, year_4_st_marys, now)
 	result = cursor.execute(sql, data)
 	connection.commit()
 	cursor.close()

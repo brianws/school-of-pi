@@ -38,7 +38,7 @@ def SaveToCloud():
         now = datetime.now().date()
         year_5_st_marys = 6
         sql = "INSERT INTO susschool_reading(type, amount, area_id, created_date) VALUES(%s, %s, %s, %s)"
-        data = ('Bike', 1, year_5_st_marys, now)
+        data = ('light', 1, year_5_st_marys, now)
         result = cursor.execute(sql, data)
         connection.commit()
         cursor.close()
