@@ -1,4 +1,3 @@
-cd stmarysschool
 source myvenv/bin/activate
 python manage.py shell
 from susschool.models import School
